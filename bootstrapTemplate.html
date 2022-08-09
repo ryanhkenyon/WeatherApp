@@ -4,48 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
+
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous"
     />
+
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
     ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
   </head>
-  <link rel="stylesheet" href="css/style.css" />
   <body>
-<<<<<<< Updated upstream
-    <div class="container">
-      <input id="zipCodeInput" placeholder="Enter Zip Code">
-    </div>
-    <div class="container" id="inputBox">
-      <div class="container" id="weatherBox">
-        <div class="row" id="weatherOutput">
-            <p id="todaysDateOutput">Today's Date</p>
-            <p id="cityOutput">City Name, State</p>
-            <p id="degreesOutput">Current Temp</p>
-            <p id="highOutput">High/Low</p>
-            <img id="weatherIcon" src="sun.jpg">
-            <p id="additionalWeatherInfo1">Chance of Rain: 10%</p>
-            <p id="weatherMessageOutput">Pack some sunscreen!</p>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row" id="day1"><strong>Sunday</strong> H:92/L:88 0%</div>
-        <div class="row" id="day2"><strong>Monday</strong> H:96/L:91 10%</div>
-        <div class="row" id="day3"><strong>Tuesday</strong> H:94/L:89 25%</div>
-        <div class="row" id="day4"><strong>Wednesday</strong>H:90/L:86 10%</div>
-        <div class="row" id="day5"><strong>Thursday</strong> H:89/L:85 60%</div>
-        <div class="row" id="day6"><strong>Friday</strong> H:92/L:88 40%</div>
-        <div class="row" id="day7"><strong>Saturday</strong> H:96/L:90 0%</div>
-      </div>
-    </div>
-=======
+
 
   <div class="container h-100 d-flex align-items-center justify-content-center" id="inputBox">
 
@@ -82,5 +60,36 @@
   <!-- </div> -->
 
 >>>>>>> Stashed changes
+=======
+
+  <div class="container h-100 d-flex align-items-center justify-content-center">
+    <input id="zipCode" placeholder="Enter Zip Code" />
+  </div>
+
+  <!-- <div class="container" id="inputBox"> -->
+    <div class="container col-4" id="weatherBox">
+      <div class="row" id="weatherOutput">
+          <p id="selectedDate">Date</p>
+          <p id="cityName">City Name</p>
+          <p id="currentTemp">Current Temperature</p>
+          <p id="lowHighTemperature">High/Low</p>
+          <img id="weatherIcon" src="sun.jpg" />
+          <p id="chanceOfRain">Chance of Rain: 10%</p>
+          <p id="weatherMessage">Pack some sunscreen!</p>
+      </div>
+    </div>
+
+    <div class="container col-4">
+      <div class="row" id="sunday"><p><strong>Sunday</strong> L:88/H:92 0%</p></div>
+      <div class="row" id="monday"><p><strong>Monday</strong> L:91/H:96 10%</p></div>
+      <div class="row" id="tuesday"><p><strong>Tuesday</strong> L:89/H:94 25%</p></div>
+      <div class="row" id="wednesday"><p><strong>Wednesday</strong>L:86/H:90 10%</p></div>
+      <div class="row" id="thursday"><p><strong>Thursday</strong> L:85/H:89 60%</p></div>
+      <div class="row" id="friday"><p><strong>Friday</strong> L:88/H:92 40%</p></div>
+      <div class="row" id="saturday"><p><strong>Saturday</strong> L:90H:96 0%</p></div>
+    </div>
+  <!-- </div> -->
+
+>>>>>>> Binh
   </body>
 </html>

@@ -1,47 +1,98 @@
-.row {
-    border: black solid 2px;
-    margin: 3px;
-    padding: 5px;
-    min-width: 100px;
-    max-width: 300px;
+:root {
+    --back-color: lightBlue;
+    --front-color: blanchedAlmond;
 }
 
-.zipCodeInput {
-    margin: auto;
-    text-align: center;
-}
+
+/*zip code input*/
+
 
 #inputBox {
-    margin-top: 20px;
-    display: flex;
+    background-color: var(--back-color);
+    border: solid black 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 320px;
 }
+
+#input {
+    background-color: var(--front-color);
+    margin: 4px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+#button {
+    display: block;
+    margin-right: 40px;
+}
+
+/*todays weather display*/
 
 #weatherBox {
-    float: left;
-    width: 300px;
+    background-color: var(--back-color);
+    border: black solid 10px;
+    padding: 10px;
     height: 400px;
-}
-
-#weatherOutput {
-    height: 400px;
-    width: 270px;
+    min-width: 400px;
+    max-width: 1000px;
     text-align: center;
     display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #weatherIcon {
+    float: right;
     width: 125px;
-    margin: 10px;
 }
 
-#degreesOutput {
-    font-size: 37px;
+
+#selectedDate {
+    text-align: left;
+    font-size: 30px;
 }
 
-#additionalWeatherInfo1 {
-    margin-top: 30px;
+#cityName {
+    text-align: left;
+    font-size: 40px;
 }
 
-#weatherMessageOutput {
-    margin-top: 65px;
+#weatherInfoBox {
+    background-color: var(--front-color);
+    border: solid black 5px;
+    width: 200px;
 }
+
+#currentTemp {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+/*seven day forecast*/
+
+#days {
+    background-color: var(--back-color);
+    border: black solid 10px;
+    padding: 10px;
+    height: 460px;
+    width: 400px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#day1, #day2, #day3, #day4, #day5, #day6, #day7 {
+    background-color:var(--front-color);
+    border: black solid 2px;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px;
+    width: 275px;
+}
+

@@ -13,6 +13,7 @@
 
 #inputBox {
     margin-top: 20px;
+    display: flex;
 }
 
 #weatherBox {
@@ -29,8 +30,8 @@
 }
 
 #weatherIcon {
-    float: left;
-    width: 100px;
+    width: 125px;
+    margin: 10px;
 }
 
 #degreesOutput {

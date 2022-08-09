@@ -8,16 +8,12 @@
 
 
 #inputBox {
-<<<<<<< Updated upstream
-    margin-top: 20px;
-=======
     background-color: var(--back-color);
     border: solid black 5px;
     margin-top: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 320px;
->>>>>>> Stashed changes
 }
 
 #input {
@@ -49,13 +45,8 @@
 }
 
 #weatherIcon {
-<<<<<<< Updated upstream
-    float: left;
-    width: 100px;
-=======
     float: right;
     width: 125px;
->>>>>>> Stashed changes
 }
 
 
@@ -96,11 +87,6 @@
     margin-bottom: 20px;
 }
 
-<<<<<<< Updated upstream
-#weatherMessageOutput {
-    margin-top: 65px;
-}
-=======
 #day1, #day2, #day3, #day4, #day5, #day6, #day7 {
     background-color:var(--front-color);
     border: black solid 2px;
@@ -109,5 +95,3 @@
     padding: 5px;
     width: 275px;
 }
-
->>>>>>> Stashed changes

@@ -14,7 +14,7 @@ button.addEventListener("click", function search() {
         let weatherMessage = document.getElementById("weatherMessage");
         let days = document.getElementById("days").getElementsByTagName("div");
         let humidity = document.getElementById("humidity");
-        // let windSpeed = document.getElementById("windSpeed");
+        // let windSpeed = document.getElementById("windSpeed") hi binh!;
         // let feelsLike = document.getElementById("feelsLike");
         let weekInfo = [];
 

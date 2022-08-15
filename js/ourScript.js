@@ -1,22 +1,7 @@
-let button = document.getElementById('button');
+function search() {
 
-button.addEventListener("click", function search() {
-    
-    let zipCode = document.getElementById("input");
-    
-    if (zipCode.value > 9999 && zipCode.value < 100000) {
-        //Grab elements
-        let weatherIcon = document.getElementById("weatherIcon");
-        let selectedDate = document.getElementById("selectedDate");
-        let cityName = document.getElementById("cityName");
-        let currentTemp = document.getElementById("currentTemp");
-        let lowHighTemp = document.getElementById("lowHighTemperature");
-        let weatherMessage = document.getElementById("weatherMessage");
-        let days = document.getElementById("days").getElementsByTagName("div");
-        let humidity = document.getElementById("humidity");
-        // let windSpeed = document.getElementById("windSpeed");
-        // let feelsLike = document.getElementById("feelsLike");
-        let weekInfo = [];
+let zipCode = document.getElementById("input");
+
 
         fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode.value}&appid=7df71b8a7701d4f29648eebc701ed349`)
             .then((locationApiData) => {
@@ -93,3 +78,4 @@ button.addEventListener("click", function search() {
         });
     }            
 });
+

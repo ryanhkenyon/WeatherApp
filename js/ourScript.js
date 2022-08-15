@@ -14,7 +14,7 @@ button.addEventListener("click", function search() {
         let weatherMessage = document.getElementById("weatherMessage");
         let days = document.getElementById("days").getElementsByTagName("div");
         let humidity = document.getElementById("humidity");
-        // let windSpeed = document.getElementById("windSpeed") hi binh!;
+        // let windSpeed = document.getElementById("windSpeed");
         // let feelsLike = document.getElementById("feelsLike");
         let weekInfo = [];
 
@@ -78,6 +78,11 @@ button.addEventListener("click", function search() {
                         
                         days[x].innerHTML = `<p>${dayHTML}<br>${month}/${day}/${year}<br>L: ${weekInfo[x].temp.min.toFixed(0)}\u00B0F / H: ${weekInfo[x].temp.max.toFixed(0)}\u00B0F</p>`;
                     }
+
+                    return weekInfo;
+                })
+                .then((weekInfoArr) => {
+                    console.log(weekInfoArr[0].dt);
                 })
                 .catch((error) => {
                     console.log(`WeatherDataAPI Catch ${error}`);

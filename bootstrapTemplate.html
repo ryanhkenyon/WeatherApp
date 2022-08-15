@@ -20,35 +20,37 @@
     ></script>
 
     <link rel="stylesheet" href="css/style.css" />
-    
+    <script src="js/ourScript.js"></script>
+
   </head>
-  
+
   <body>
-    
-    <div class="container h-100 d-flex align-items-center justify-content-center" id="inputBox">
-      <input id="input" type="number" placeholder="Enter Zip Code" />
-      <button class="btn btn-primary" id="button">Search</button>
-    </div>
-    
-    <div id="weatherBox">
+
+  <div class="container h-100 d-flex align-items-center justify-content-center" id="inputBox">
+
+    <input id="input" type="number" placeholder="Enter Zip Code" />
+    <button class="btn btn-primary" id="button" onclick="search()">Search</button>
+  </div>
+
+  <div class="container col-5" id="weatherBox">
+    <div class="container">
+      <img id="weatherIcon" src="sun.png" />
       <div class="container">
-        <img id="weatherIcon" src="img/sun.png" />
-        <div class="container">
-          <p id="selectedDate">8/27/2022</p>
-          <p id="cityName">Tampa</p>
-        </div>
-      </div>
-      <div class="container" id="weatherInfoBox">
-        <p id="currentTemp">98&#8457</p>
-        <p id="lowHighTemperature">High 99&#8457 / Low 88&#8457</p>
-        <p id="humidity">Humidity: 50%</p>
-        <p id="weatherMessage">Pack some sunscreen!</p>
+        <p id="selectedDate">8/27/2022</p>
+        <p id="cityName">Tampa, FL</p>
       </div>
     </div>
+    <div class="container" id="weatherInfoBox">
+      <p id="currentTemp">98&#8457</p>
+      <p id="lowHighTemperature">High 99&#8457 / Low 88&#8457</p>
+      <p id="chanceOfRain">Chance of Rain: 10%</p>
+      <p id="weatherMessage">Pack some sunscreen!</p>
+    </div>
+  </div>
     
-    <div class="row" id="bottom-half">
-    <div class="col" id="days">
-      <div class="row" id="day1"><p><strong>Sunday</strong> 8/15/22 H: 92 / L: 82 0%</p></div>
+
+    <div class="container col-5" id="days">
+      <div class="row" id="day1"><p><strong>Sunday</strong> H: 92 / L: 82 0%</p></div>
       <div class="row" id="day2"><p><strong>Monday</strong> H: 91 / L: 86 10%</p></div>
       <div class="row" id="day3"><p><strong>Tuesday</strong> H: 89 / L: 87 25%</p></div>
       <div class="row" id="day4"><p><strong>Wednesday</strong> H: 96 / L: 90 10%</p></div>
@@ -57,12 +59,5 @@
       <div class="row" id="day7"><p><strong>Saturday</strong> H: 90 / L: 86 0%</p></div>
     </div>
 
-    <div class="col" id="days">
-      <div class="row" id="day6"><p><strong>Friday</strong> H: 98 / L: 92 40%</p></div>
-    </div>
-  </div>
-    
   </body>
-  <script src="js/ourScript.js"></script>
-  </html>
-  
+</html>

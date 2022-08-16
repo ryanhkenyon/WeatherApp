@@ -1,15 +1,7 @@
 :root {
-
-    /*no rain colors*/
-    --back-color-sunny: rgba(135,206,235,.7);
-    --front-color-sunny: rgba(222,222,222,.8);
-    --hover-color-sunny: rgb(255,255,255,.7);
-    
-    /*rain colors*/
-    --back-color-rain: rgba(0,0,153,.7);
-    --front-color-rain: rgba(99,102,106,.9);
-    --hover-color-rain: rgba(255,255,0,.7);
-    
+    --back-color: rgba(135,206,235,.7);
+    --front-color: rgba(222,222,222,.8);
+    --hover-color: rgb(255,255,255,.7);
 
 }
 
@@ -18,7 +10,7 @@
 
 
 #inputBox {
-    background-color: var(--back-color-sunny);
+    background-color: var(--back-color);
     border: solid black 5px;
     border-radius: 20px;
     margin-top: 10px;
@@ -28,7 +20,7 @@
 }
 
 #input {
-    background-color: var(--front-color-sunny);
+    background-color: var(--front-color);
     border: solid black 2px;
     border-radius: 5px;
     margin: 4px;
@@ -37,7 +29,7 @@
 }
 
 #input:hover {
-    background-color: var(--hover-color-sunny);
+    background-color: var(--hover-color);
 }
 
 #input:focus {
@@ -52,11 +44,11 @@
 /*todays weather display*/
 
 #weatherBox {
-    background-color: var(--back-color-sunny);
+    background-color: var(--back-color);
     border: black solid 10px;
     border-radius: 20px;
     padding: 10px;
-    height: 400px;
+    height: 500px;
     min-width: 400px;
     max-width: 700px;
     text-align: center;
@@ -84,23 +76,23 @@
     transition: transform 5s ease-in-out;
 }
 
-#weatherIcon:hover {
-    transform: rotate(360deg);
-}
-
-
-#selectedDate {
+#selectedDay {
     text-align: left;
     font-size: 30px;
 }
 
+#selectedDate {
+    text-align: left;
+    font-size: 20px;
+}
+
 #cityName {
     text-align: left;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 #weatherInfoBox {
-    background-color: var(--front-color-sunny);
+    background-color: var(--front-color);
     border: solid black 5px;
     border-radius: 20px;
     width: 300px;
@@ -111,7 +103,7 @@
 }
 
 #weatherInfoBox:hover {
-    background-color: var(--hover-color-sunny);
+    background-color: var(--hover-color);
     transform: scale(1.15);
 }
 
@@ -132,7 +124,7 @@
 /*seven day forecast*/
 
 #days {
-    background-color: var(--back-color-sunny);
+    background-color: var(--back-color);
     border: black solid 10px;
     border-radius: 20px;
     padding: 10px;
@@ -147,7 +139,7 @@
 }
 
 #day1, #day2, #day3, #day4, #day5, #day6, #day7 {
-    background-color:var(--front-color-sunny);
+    background-color:var(--front-color);
     border: black solid 2px;
     border-radius: 20px;
     margin: auto;
@@ -158,7 +150,7 @@
 }
 
 #day1:hover, #day2:hover, #day3:hover, #day4:hover, #day5:hover, #day6:hover, #day7:hover {
-    background-color: var(--hover-color-sunny);
+    background-color: var(--hover-color);
     transform: scale(1.15);
 }
 

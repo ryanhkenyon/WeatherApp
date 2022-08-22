@@ -7,66 +7,80 @@
     <title>Weather App</title>
 
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
     />
 
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
     ></script>
 
     <link rel="stylesheet" href="css/style.css" />
-    
   </head>
-  
+
   <body>
-    
-    <div class="container h-100 d-flex align-items-center justify-content-center" id="inputBox">
+    <div
+      class="container h-100 d-flex align-items-center justify-content-center"
+      id="inputBox"
+    >
       <input id="input" type="number" placeholder="Enter Zip Code" />
       <button class="btn btn-primary" id="button">Search</button>
     </div>
     
-    <div id="weatherBox">
-      <div class="container">
-        <img id="weatherIcon" src="img/sun.png" />
+    <div class="col" id="error" style="display: none">
+      <div class="container" id="weatherInfoBox">
+        <p id="errorMessage"></p>
+        <img src="img/error sun.png" style="width: 200px" />
+      </div>
+    </div>
+    
+    <div id="hide" style="display: none">
+      <div id="weatherBox">
         <div class="container">
-          <p id="selectedDay">Monday</p>
-          <p id="selectedDate">8/27/2022</p>
-          <p id="cityName">Tampa</p>
+          <img id="weatherIcon" src="img/sun.png" />
+          <div class="container">
+            <p id="selectedDay"></p>
+            <p id="selectedDate"></p>
+            <p id="cityName"></p>
+          </div>
+        </div>
+        <div class="container" id="weatherInfoBox">
+          <p id="currentTemp"></p>
+          <p id="lowHighTemperature"></p>
+          <p id="humidity"></p>
+          <p id="weatherMessage"></p>
         </div>
       </div>
-      <div class="container" id="weatherInfoBox">
-        <p id="currentTemp">98&#8457</p>
-        <p id="lowHighTemperature">High 99&#8457 / Low 88&#8457</p>
-        <p id="humidity">Humidity: 50%</p>
-        <p id="weatherMessage">Pack some sunscreen!</p>
+      
+      <div class="row" id="bottom-half">
+        <div class="col" id="days">
+          <div class="row" id="day1"></div>
+          <div class="row" id="day2"></div>
+          <div class="row" id="day3"></div>
+          <div class="row" id="day4"></div>
+          <div class="row" id="day5"></div>
+          <div class="row" id="day6"></div>
+          <div class="row" id="day7"></div>
+        </div>
       </div>
     </div>
+
+
+    <div class="container h-100 d-flex align-items-center justify-content-center" id="instructionsBox">
     
-    <div class="row" id="bottom-half">
-    <div class="col" id="days">
-      <div class="row" id="day1"><p><strong>Sunday</strong> 8/15/22 H: 92 / L: 82 0%</p></div>
-      <div class="row" id="day2"><p><strong>Monday</strong> H: 91 / L: 86 10%</p></div>
-      <div class="row" id="day3"><p><strong>Tuesday</strong> H: 89 / L: 87 25%</p></div>
-      <div class="row" id="day4"><p><strong>Wednesday</strong> H: 96 / L: 90 10%</p></div>
-      <div class="row" id="day5"><p><strong>Thursday</strong> H: 95 / L: 89 60%</p></div>
-      <div class="row" id="day6"><p><strong>Friday</strong> H: 98 / L: 92 40%</p></div>
-      <div class="row" id="day7"><p><strong>Saturday</strong> H: 90 / L: 86 0%</p></div>
+    <div id="instructions">
+      <p id="instructionsText">
+        Welcome to our weather forecaster. <br />1. Input a valid zip code and
+        press search <br />2. Click on one of the forecasted dates to get more
+        information.
+      </p>
     </div>
 
-    <div class="col" id="days">
-      <div class="row" id="day6"><p><strong>Friday</strong> H: 98 / L: 92 40%</p></div>
-    </div>
-
-    <div class="col" id="days">
-      <div class="row" id="day7"><p><strong>Saturday</strong> H: 90 / L: 86 0%</p></div>
-    </div>
   </div>
-    
   </body>
   <script src="js/ourScript.js"></script>
   </html>

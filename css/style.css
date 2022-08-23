@@ -41,6 +41,31 @@
     margin-right: 40px;
 }
 
+#instructionsBox {
+    background-color: var(--back-color);
+    border: solid black 7px;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 320px;
+}
+
+#instructions {
+    text-align: center;
+    margin: auto;
+    display: block;
+    background-color: var(--front-color);
+    border: solid black 5px;
+    border-radius: 20px;
+    margin-top: 10px;
+    width: 500px;
+    padding: 5px;
+
+}
+
+
+
 /*todays weather display*/
 
 #weatherBox {
@@ -135,6 +160,22 @@
     max-width: 500px;
     margin-top: 20px;
     margin-bottom: 20px;
+    
+}
+
+#error {
+    background-color: var(--back-color);
+    border: black solid 10px;
+    border-radius: 20px;
+    padding: 10px;
+    height: 325px;
+    width: 400px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
     
 }
 

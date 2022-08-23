@@ -4,7 +4,9 @@ button.addEventListener("click", function search() {
   let zipCode = document.getElementById("input");
 
   if (zipCode.value > 9999 && zipCode.value < 100000) {
+    document.getElementById('error').setAttribute('style','display:none');
     //Grab elements
+    
     let weatherIcon = document.getElementById("weatherIcon");
     let selectedDate = document.getElementById("selectedDate");
     let selectedDay = document.getElementById("selectedDay");
@@ -22,11 +24,14 @@ button.addEventListener("click", function search() {
       `http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode.value}&appid=7df71b8a7701d4f29648eebc701ed349`
     )
       .then((locationApiData) => {
+        if (!locationApiData.ok) {
+          throw Error (locationApiData.statusText);
+        }
         return locationApiData.json();
       })
       .then((zipCode) => {
         if (zipCode.lat !== undefined && zipCode.lon !== undefined) {
-          cityName.textContent = zipCode.name;
+          cityName.innerHTML = `<strong>${zipCode.name}</strong>`;
           return zipCode;
         }
       })
@@ -99,15 +104,26 @@ button.addEventListener("click", function search() {
                 weatherIcon.src = `http://openweathermap.org/img/wn/${weekInfo[x].weather[0].icon}@2x.png`;
               });
             }
-
+            document.getElementById('hide').removeAttribute('style');
             return weekInfo;
           })
           .catch((error) => {
             console.log(`WeatherDataAPI Catch ${error}`);
+            document.getElementById('hide').setAttribute('style', 'display:none');
+            document.getElementById('error').removeAttribute('style');
+            document.getElementById('errorMessage').innerHTML = `<strong>Sorry! Zip code not found!</strong>`;
+            document.getElementById('instructionsText').innerHTML = 'Welcome to our weather forecaster. <br />1. Input a valid zip code and press search <br />2. Click on one of the forecasted dates to get more information.';
+
           });
       })
       .catch((error) => {
         console.log(`Location API Data error: ${error}`);
+        document.getElementById('hide').setAttribute('style', 'display:none');
+        document.getElementById('error').removeAttribute('style');
+        document.getElementById('errorMessage').innerHTML = `<strong>Sorry! Zip code not found!</strong>`; 
+        document.getElementById('instructionsText').innerHTML = 'Welcome to our weather forecaster. <br />1. Input a valid zip code and press search <br />2. Click on one of the forecasted dates to get more information.';
+
       });
+      document.getElementById('instructionsText').innerHTML = 'Thanks for using our app!';
   }
 });

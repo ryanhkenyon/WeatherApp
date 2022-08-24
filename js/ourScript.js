@@ -5,8 +5,8 @@ button.addEventListener("click", function search() {
 
   if (zipCode.value > 9999 && zipCode.value < 100000) {
     document.getElementById('error').setAttribute('style','display:none');
+
     //Grab elements
-    
     let weatherIcon = document.getElementById("weatherIcon");
     let selectedDate = document.getElementById("selectedDate");
     let selectedDay = document.getElementById("selectedDay");
@@ -16,8 +16,7 @@ button.addEventListener("click", function search() {
     let weatherMessage = document.getElementById("weatherMessage");
     let days = document.getElementById("days").getElementsByTagName("div");
     let humidity = document.getElementById("humidity");
-    // let windSpeed = document.getElementById("windSpeed");
-    // let feelsLike = document.getElementById("feelsLike");
+
     let weekInfo = [];
 
     fetch(
@@ -79,18 +78,12 @@ button.addEventListener("click", function search() {
               if (x === 0) {
                 selectedDate.innerText = `${month}/${day}/${year}`;
                 selectedDay.innerHTML = dayHTML;
-                currentTemp.innerText = `${weekInfo[x].temp.day.toFixed(
-                  0
-                )}\u00B0F`;
-                lowHighTemp.innerText = `Low: ${weekInfo[x].temp.min.toFixed(
-                  0
-                )}\u00B0F / High: ${weekInfo[x].temp.max.toFixed(0)}\u00B0F`;
-                weatherMessage.innerText = weekInfo[x].weather[0].description;
+                currentTemp.innerText = `${weekInfo[x].temp.day.toFixed(0)}\u00B0F`;
+                lowHighTemp.innerText = `Low: ${weekInfo[x].temp.min.toFixed(0)}\u00B0F / High: ${weekInfo[x].temp.max.toFixed(0)}\u00B0F`;
+                weatherMessage.innerText = `Today's Weather: ${weekInfo[x].weather[0].description}`;
                 humidity.innerText = `Humidity: ${weekInfo[x].humidity}%`;
                 weatherIcon.src = `http://openweathermap.org/img/wn/${weekInfo[x].weather[0].icon}@2x.png`;
               }
-
-              
 
               days[x].innerHTML = `<p>${dayHTML}<br>${month}/${day}/${year}<br>L: ${weekInfo[x].temp.min.toFixed(0)}\u00B0F / H: ${weekInfo[x].temp.max.toFixed(0)}\u00B0F</p>`;
 
@@ -99,21 +92,14 @@ button.addEventListener("click", function search() {
                 selectedDay.innerHTML = dayHTML;
                 currentTemp.innerText = `${weekInfo[x].temp.day.toFixed(0)}\u00B0F`;
                 lowHighTemp.innerText = `Low: ${weekInfo[x].temp.min.toFixed(0)}\u00B0F / High: ${weekInfo[x].temp.max.toFixed(0)}\u00B0F`;
-                weatherMessage.innerText = weekInfo[x].weather[0].description;
+                weatherMessage.innerText = `Today's Weather: ${weekInfo[x].weather[0].description}`;
                 humidity.innerText = `Humidity: ${weekInfo[x].humidity}%`;
                 weatherIcon.src = `http://openweathermap.org/img/wn/${weekInfo[x].weather[0].icon}@2x.png`;
               });
             }
+
             document.getElementById('hide').removeAttribute('style');
             return weekInfo;
-          })
-          .catch((error) => {
-            console.log(`WeatherDataAPI Catch ${error}`);
-            document.getElementById('hide').setAttribute('style', 'display:none');
-            document.getElementById('error').removeAttribute('style');
-            document.getElementById('errorMessage').innerHTML = `<strong>Sorry! Zip code not found!</strong>`;
-            document.getElementById('instructionsText').innerHTML = 'Welcome to our weather forecaster. <br />1. Input a valid zip code and press search <br />2. Click on one of the forecasted dates to get more information.';
-
           });
       })
       .catch((error) => {
@@ -121,9 +107,6 @@ button.addEventListener("click", function search() {
         document.getElementById('hide').setAttribute('style', 'display:none');
         document.getElementById('error').removeAttribute('style');
         document.getElementById('errorMessage').innerHTML = `<strong>Sorry! Zip code not found!</strong>`; 
-        document.getElementById('instructionsText').innerHTML = 'Welcome to our weather forecaster. <br />1. Input a valid zip code and press search <br />2. Click on one of the forecasted dates to get more information.';
-
       });
-      document.getElementById('instructionsText').innerHTML = 'Thanks for using our app!';
   }
 });
